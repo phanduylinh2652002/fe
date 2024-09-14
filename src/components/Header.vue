@@ -9,28 +9,20 @@
           <li class="has-children">
             <a href="#">Địa điểm</a>
             <ul class="dropdown">
-              <li><a href="elements.html">Biển</a></li>
-              <li><a href="#">Núi rừng</a></li>
-              <li class="has-children">
-                <a href="#">Khu vui chơi giải trí</a>
-                <ul class="dropdown">
-                  <li><a href="#">Công viên nước</a></li>
-                  <li><a href="#">Trung tâm thương mại</a></li>
-                  <li><a href="#"></a></li>
-                </ul>
+              <li v-for="(item, index) in categories.data" :key="index">
+                <a href="#">{{ item.name }}</a>
               </li>
-              <li><a href="#">Cắm trại</a></li>
             </ul>
           </li>
           <li><a href="services.html">Dịch vụ</a></li>
           <li><a href="contact.html">Liên hệ</a></li>
-          <li class="has-children" v-if="isLogin">
+          <li class="has-children" v-if="user">
             <a href="#">{{ user.name }}</a>
             <ul class="dropdown">
               <li><router-link to="/logout">Logout</router-link></li>
             </ul>
           </li>
-          <li><router-link to="/login" v-if="!isLogin">Đăng nhập</router-link></li>
+          <li v-else><router-link to="/login" >Đăng nhập</router-link></li>
         </ul>
 
         <a href="#"
@@ -44,8 +36,14 @@
   </nav>
 </template>
 <script setup>
-const isLogin = localStorage.getItem("token");
+import { getCategories } from '@/services/categoryService.js'
+import { ref, onMounted } from 'vue';
+
 const user = JSON.parse(localStorage.getItem('user'))
+const categories = ref({});
+onMounted(async () => {
+  categories.value = await getCategories();
+});
 </script>
 <style lang="css" scoped>
 .site-nav .site-navigation .site-menu > li > a {
