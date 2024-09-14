@@ -24,7 +24,7 @@
           </li>
           <li><a href="services.html">Dịch vụ</a></li>
           <li><a href="contact.html">Liên hệ</a></li>
-          <li><a href="login.html">Đăng nhập</a></li>
+          <li><router-link to="/login">Đăng nhập</router-link></li>
         </ul>
 
         <a href="#"
