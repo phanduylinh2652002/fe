@@ -35,7 +35,7 @@
                       <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
                         <!-- <input type="text" class="form-control" name="daterange"> -->
                         <input type="text" id="search-tour"
-                               class="form-control form-control-plaintext"
+                               class="form-control"
                                placeholder="Tìm tour du lịch..." style="padding-left: 10px;">
                       </div>
                       <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-2 wrapper-filter">
@@ -43,80 +43,12 @@
                            style="display: block;">
                           <i class="fa-solid fa-sliders"></i>
                         </a>
-                        <div class="wrapper-category-list collapse container-list" id="demo">
-                          <table class="table table-list-category table-dark table-hover">
-                            <tbody>
-                            <tr>
-                              <td><span class="clickable" data-value="1"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Vịnh Hạ Long</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i>Du lịch Hà Nội</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Hải Phòng</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            <tr>
-                              <td><span class="clickable" data-value="2"><i
-                                style="padding-right: 10px;"
-                                class="fa-solid fa-mountain-sun"></i> Du lịch Phú Quốc</span></td>
-                            </tr>
-                            </tbody>
-                          </table>
-                        </div>
                       </div>
                     </div>
                     <div class="row align-items-center">
                       <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
                         <input type="submit" class="btn btn-primary btn-block"
                                value="Tìm kiếm tour">
-                      </div>
-                      <div class="col-lg-8">
-                        <label class="control control--checkbox mt-3">
-                          <span class="caption">Lưu tìm kiếm</span>
-                          <input type="checkbox" checked="checked" />
-                          <div class="control__indicator"></div>
-                        </label>
                       </div>
                     </div>
                   </form>
@@ -126,11 +58,11 @@
           </div>
           <div class="col-lg-5">
             <div class="slides">
-              <img src="../../public/../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid active">
-              <img src="../../public/../../public/images/hero-slider-2.jpg" alt="Image" class="img-fluid">
-              <img src="../../public/../../public/images/hero-slider-3.jpg" alt="Image" class="img-fluid">
-              <img src="../../public/../../public/images/hero-slider-4.jpg" alt="Image" class="img-fluid">
-              <img src="../../public/../../public/images/hero-slider-5.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid active">
+              <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
             </div>
           </div>
         </div>
@@ -151,7 +83,7 @@
               hấp dẫn</p>
             <div class="owl-single dots-absolute owl-carousel owl-theme owl-bs main-carousel">
               <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../../public/images/slider-1.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
+                <img src="../assets/images/slider-1.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
                 <div class="wrapper-img-background" >
                   <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
                   <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
@@ -165,7 +97,7 @@
                 </div>
               </div>
               <div class="item wrapper-img-tourhot img-fluid rounded-20" >
-                <img src="../../public/images/slider-2.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
+                <img src="../assets/images/slider-2.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
                 <div class="wrapper-img-background">
                   <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
                   <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
@@ -180,7 +112,7 @@
               </div>
 
               <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../../public/images/slider-3.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
+                <img src="../assets/images/slider-3.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
                 <div class="wrapper-img-background">
                   <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
                   <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
@@ -194,7 +126,7 @@
                 </div>
               </div>
               <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../../public/images/slider-4.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
+                <img src="../assets/images/slider-4.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
                 <div class="wrapper-img-background">
                   <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
                   <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
@@ -208,7 +140,7 @@
                 </div>
               </div>
               <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../../public/images/slider-5.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
+                <img src="../assets/images/slider-5.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
                 <div class="wrapper-img-background">
                   <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
                   <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
@@ -239,7 +171,7 @@
                       (Click
                       xem chi tiết)</p>
                   </div>
-                  <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
                 </a>
                 <div class="tour-name-sale">
                   <h5 class="text-center">Tour</h5>
@@ -260,7 +192,7 @@
                       (Click
                       xem chi tiết)</p>
                   </div>
-                  <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
                 </a>
                 <div class="tour-name-sale">
                   <h5 class="text-center">Tour</h5>
@@ -281,7 +213,7 @@
                       (Click
                       xem chi tiết)</p>
                   </div>
-                  <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
                 </a>
                 <div class="tour-name-sale">
                   <h5 class="text-center">Tour</h5>
@@ -302,7 +234,7 @@
                       (Click
                       xem chi tiết)</p>
                   </div>
-                  <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
                 </a>
                 <div class="tour-name-sale">
                   <h5 class="text-center">Tour</h5>
@@ -323,7 +255,7 @@
                       (Click
                       xem chi tiết)</p>
                   </div>
-                  <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
                 </a>
                 <div class="tour-name-sale">
                   <h5 class="text-center">Tour</h5>
@@ -344,7 +276,7 @@
                       (Click
                       xem chi tiết)</p>
                   </div>
-                  <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
                 </a>
                 <div class="tour-name-sale">
                   <h5 class="text-center">Tour</h5>
@@ -383,11 +315,8 @@
                   <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
                     Quốc
                     Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                  <a href="#" class="btn btn-success btn-tour-item" style="margin-top: 30px;">Click để
-                    xem
-                    chi tiết</a>
                 </div>
-                <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
               </div>
             </div>
 
@@ -398,11 +327,8 @@
                   <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
                     Quốc
                     Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                  <a href="#" class="btn btn-success btn-tour-item" style="margin-top: 30px;">Click để
-                    xem
-                    chi tiết</a>
                 </div>
-                <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
               </div>
             </div>
           </div>
@@ -415,11 +341,8 @@
                   <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
                     Quốc
                     Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                  <a href="#" class="btn btn-success btn-tour-item" style="margin-top: 30px;">Click để
-                    xem
-                    chi tiết</a>
                 </div>
-                <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
               </div>
             </div>
 
@@ -430,11 +353,8 @@
                   <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
                     Quốc
                     Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                  <a href="#" class="btn btn-success btn-tour-item" style="margin-top: 30px;">Click để
-                    xem
-                    chi tiết</a>
                 </div>
-                <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
               </div>
             </div>
           </div>
@@ -446,11 +366,8 @@
                   <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
                     Quốc
                     Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                  <a href="#" class="btn btn-success btn-tour-item" style="margin-top: 30px;">Click để
-                    xem
-                    chi tiết</a>
                 </div>
-                <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-tour-item">
+                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-tour-item">
               </div>
             </div>
 
@@ -461,11 +378,8 @@
                   <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
                     Quốc
                     Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                  <a href="#" class="btn btn-success btn-tour-item" style="margin-top: 30px;">Click để
-                    xem
-                    chi tiết</a>
                 </div>
-                <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
               </div>
             </div>
           </div>
@@ -532,7 +446,7 @@
                 <h3>Du lịch Phú Quốc</h3>
                 <span class="location">Phú Quốc</span>
               </div>
-              <img src="../../public/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
 
@@ -542,7 +456,7 @@
                 <h3>Du lịch Hà Nội</h3>
                 <span class="location">Hà Nội</span>
               </div>
-              <img src="../../public/images/hero-slider-2.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-2.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
 
@@ -552,7 +466,7 @@
                 <h3>Du lich Hội An</h3>
                 <span class="location">Quảng Nam</span>
               </div>
-              <img src="../../public/images/hero-slider-3.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-3.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
 
@@ -563,7 +477,7 @@
                 <h3>Du lịch Nha Trang</h3>
                 <span class="location">Nha Trang</span>
               </div>
-              <img src="../../public/images/hero-slider-4.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-4.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
 
@@ -573,7 +487,7 @@
                 <h3>Du lịch Ninh Bình</h3>
                 <span class="location">Ninh Bình</span>
               </div>
-              <img src="../../public/images/hero-slider-5.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-5.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
 
@@ -583,7 +497,7 @@
                 <h3>Du lịch Đà Nẵng</h3>
                 <span class="location">Đà Nẵng</span>
               </div>
-              <img src="../../public/images/hero-slider-2.jpg" alt="Image" class="img-fluid">
+              <img src="../assets/images/hero-slider-2.jpg" alt="Image" class="img-fluid">
             </a>
           </div>
 
@@ -606,7 +520,7 @@
              data-aos-duration="1200">
           <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
             <div class="media-1">
-              <a href="#" class="d-block mb-3"><img src="../../public/images/hero-slider-1.jpg" alt="Image"
+              <a href="#" class="d-block mb-3"><img src="../assets/images/hero-slider-1.jpg" alt="Image"
                                                     class="img-fluid"></a>
               <span class="d-flex align-items-center loc mb-2">
 								<span class="icon-room mr-3"></span>
@@ -626,7 +540,7 @@
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
             <div class="media-1">
-              <a href="#" class="d-block mb-3"><img src="../../public/images/hero-slider-2.jpg" alt="Image"
+              <a href="#" class="d-block mb-3"><img src="../assets/images/hero-slider-2.jpg" alt="Image"
                                                     class="img-fluid"></a>
               <span class="d-flex align-items-center loc mb-2">
 								<span class="icon-room mr-3"></span>
@@ -646,7 +560,7 @@
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
             <div class="media-1">
-              <a href="#" class="d-block mb-3"><img src="../../public/images/hero-slider-3.jpg" alt="Image"
+              <a href="#" class="d-block mb-3"><img src="../assets/images/hero-slider-3.jpg" alt="Image"
                                                     class="img-fluid"></a>
               <span class="d-flex align-items-center loc mb-2">
 								<span class="icon-room mr-3"></span>
@@ -666,7 +580,7 @@
           </div>
           <div class="col-6 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
             <div class="media-1">
-              <a href="#" class="d-block mb-3"><img src="../../public/images/hero-slider-4.jpg" alt="Image"
+              <a href="#" class="d-block mb-3"><img src="../assets/images/hero-slider-4.jpg" alt="Image"
                                                     class="img-fluid"></a>
 
               <span class="d-flex align-items-center loc mb-2">
@@ -699,7 +613,7 @@
             <div class="owl-single owl-carousel no-nav">
               <div class="testimonial mx-auto">
                 <figure class="img-wrap">
-                  <img src="../../public/images/person_2.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/person_2.jpg" alt="Image" class="img-fluid">
                 </figure>
                 <h3 class="name">Nguyễn Quỳnh Anh</h3>
                 <blockquote>
@@ -714,7 +628,7 @@
 
               <div class="testimonial mx-auto">
                 <figure class="img-wrap">
-                  <img src="../../public/images/person_3.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/person_3.jpg" alt="Image" class="img-fluid">
                 </figure>
                 <h3 class="name">Nguyễn Quốc Anh</h3>
                 <blockquote>
@@ -730,7 +644,7 @@
 
               <div class="testimonial mx-auto">
                 <figure class="img-wrap">
-                  <img src="../../public/images/person_4.jpg" alt="Image" class="img-fluid">
+                  <img src="../assets/images/person_4.jpg" alt="Image" class="img-fluid">
                 </figure>
                 <h3 class="name">Nguyễn Quỳnh Anh</h3>
                 <blockquote>
@@ -759,7 +673,7 @@
                  href="https://www.youtube.com/watch?v=Au6LqK1UH8g" data-fancybox>
                 <span></span>
               </a>
-              <img src="../../public/images/hero-slider-2.jpg" alt="Image" class="img-fluid rounded-20">
+              <img src="../assets/images/hero-slider-2.jpg" alt="Image" class="img-fluid rounded-20">
             </figure>
           </div>
 
@@ -800,21 +714,6 @@
         </div>
       </div>
     </div>
-
-
-    <!-- lienhengay -->
-    <div class="py-5 cta-section">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12">
-            <h2 class="mb-2 text-white">Liên lạc với chúng tôi ngay</h2>
-            <p class="mb-4 lead text-white text-white-opacity">Cho phép bạn khám phá những gì tốt nhất.</p>
-            <p class="mb-0"><a href="contact.html"
-                               class="btn btn-outline-white text-white btn-md font-weight-bold">Liên hệ</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
     <FooterComponent/>
   </div>
 </template>
@@ -822,4 +721,8 @@
 import HeaderComponent from '@/components/Header.vue'
 import FooterComponent from '@/components/Footer.vue'
 </script>
-
+<style lang="css" scoped>
+.hero h1 {
+  color: #6998AB;
+}
+</style>

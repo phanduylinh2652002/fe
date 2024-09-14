@@ -74,9 +74,7 @@
             <p>Bản quyền &copy;
               2024. Đã đăng ký bản quyền.
               &mdash;
-              Thiết kế bởi <a href="https://www.facebook.com/quang.sam.777/" class="link-highlight">Ca
-                sĩ
-                Quang Anh</a>
+              Thiết kế bởi <a href="https://www.facebook.com/quang.sam.777/" class="link-highlight">Duy Linh</a>
               <!-- License information: https://untree.co/license/ --> Phân phối bởi <a
                 href="https://www.facebook.com/quang.sam.777/" target="_blank">Q&A</a>
             </p>
@@ -90,3 +88,8 @@
 <script setup>
 
 </script>
+<style lang="css" scoped>
+.container {
+  background: #f8f9fa;
+}
+</style>

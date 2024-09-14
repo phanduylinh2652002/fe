@@ -1,10 +1,10 @@
 <template>
   <nav class="site-nav">
     <div class="container">
-      <div class="site-navigation">
+      <div class="site-navigation d-flex justify-content-between">
         <a href="index.html" class="logo m-0">SkyTour <span class="text-primary">.</span></a>
 
-        <ul class="js-clone-nav d-none d-lg-inline-block text-left site-menu float-right">
+        <ul class="js-clone-nav d-none d-lg-inline-block site-menu float-right">
           <li class="active"><a href="index.html">Trang chủ</a></li>
           <li class="has-children">
             <a href="#">Địa điểm</a>
@@ -40,3 +40,11 @@
 <script setup>
 
 </script>
+<style lang="css" scoped>
+.site-nav .site-navigation .site-menu > li > a {
+  color: white;
+}
+.container {
+  background: #6998AB
+}
+</style>
