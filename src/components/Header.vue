@@ -24,7 +24,13 @@
           </li>
           <li><a href="services.html">Dịch vụ</a></li>
           <li><a href="contact.html">Liên hệ</a></li>
-          <li><router-link to="/login">Đăng nhập</router-link></li>
+          <li class="has-children" v-if="isLogin">
+            <a href="#">{{ user.name }}</a>
+            <ul class="dropdown">
+              <li><router-link to="/logout">Logout</router-link></li>
+            </ul>
+          </li>
+          <li><router-link to="/login" v-if="!isLogin">Đăng nhập</router-link></li>
         </ul>
 
         <a href="#"
@@ -38,7 +44,8 @@
   </nav>
 </template>
 <script setup>
-
+const isLogin = localStorage.getItem("token");
+const user = JSON.parse(localStorage.getItem('user'))
 </script>
 <style lang="css" scoped>
 .site-nav .site-navigation .site-menu > li > a {

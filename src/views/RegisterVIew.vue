@@ -55,7 +55,13 @@ const register = handleSubmit(async (data) => {
      data.role_id = 1
      const res = await registerApi(data)
       if (res.success === true) {
-        await router.push({ name: 'login' })
+        localStorage.setItem('token', res.token);
+        await router.push({ name: 'home' })
       }
 })
 </script>
+<style lang="css" scoped>
+.container{
+  max-width: 900px;
+}
+</style>

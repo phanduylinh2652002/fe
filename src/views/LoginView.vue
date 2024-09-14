@@ -7,6 +7,7 @@
           <div class="signin-image">
             <figure><img src="../assets/images/signin-image.jpg" alt="sing up image"></figure>
             <router-link :to="{name: 'register'}" class="signup-image-link btn-login-return" >Tạo tài khoản</router-link>
+            <router-link :to="{name: 'home'}" class="signup-image-link btn-login-return mt-2" >Trang chủ</router-link>
           </div>
 
           <div class="signin-form">
@@ -46,11 +47,16 @@ const { handleSubmit, errors } = useForm({});
 const router = useRouter()
 
 const login = handleSubmit(async (data) => {
-  console.log(data)
   const res = await loginApi(data)
   if (res.success === true) {
     localStorage.setItem('token', res.access_token);
+    localStorage.setItem('user', JSON.stringify(res.user))
     await router.push({ name: 'home' })
   }
 })
 </script>
+<style lang="css" scoped>
+.container{
+  max-width: 900px;
+}
+</style>
