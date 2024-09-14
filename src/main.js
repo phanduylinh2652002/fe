@@ -24,6 +24,7 @@ import 'waypoints/lib/jquery.waypoints';
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import { Popover, Modal } from 'bootstrap'
+import '@/plugins/veeValidate.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   // Khởi tạo Modal
@@ -43,11 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 import App from './App.vue'
 import router from './router'
+import { configure } from 'vee-validate'
 
 const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
 app.use(AOS.init())
-
+configure({
+  validateOnInput: true,
+});
 app.mount('#app')
