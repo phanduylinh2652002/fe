@@ -82,207 +82,41 @@
               ngày các tour được hỗ trợ với mức giá
               hấp dẫn</p>
             <div class="owl-single dots-absolute owl-carousel owl-theme owl-bs main-carousel">
-              <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../assets/images/slider-1.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
+              <div class="item img-fluid rounded-20">
+                <img :src="tourfirst.image" alt="ảnh Sky" class="img-fluid rounded-20">
                 <div class="wrapper-img-background" >
-                  <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
-                  <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
-                  <p class="tour-sale-p2">QUẢNG BÌNH – ĐỘNG PHONG NHA – ĐỘNG THIÊN ĐƯỜNG – SUỐI NƯỚC
-                    MỌOC
-                    – SÔNG CHÀY – HANG TỐI – CỒN CÁT QUANG PHÚ</p>
-                  <p class="tour-sale-p3">Khởi hành: Các ngày trong tuần <span
+                  <h3 class="text-center">{{ tourfirst.name }}</h3>
+                  <p class="tour-sale-p1">{{ tourfirst.quantityDate }}</p>
+                  <p class="tour-sale-p2">{{ tourfirst.place }}</p>
+                  <p class="tour-sale-p3">{{ tourfirst.dateStart }} <span
                     class="tour-sale-span1">
-											2,390,000 đ</span><span class="tour-sale-span2">2,590,000 đ</span></p>
-                  <a href="chitiet.html" class="btn-detail-tour-sale btn">Xem chi tiết</a>
-                </div>
-              </div>
-              <div class="item wrapper-img-tourhot img-fluid rounded-20" >
-                <img src="../assets/images/slider-2.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
-                <div class="wrapper-img-background">
-                  <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
-                  <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
-                  <p class="tour-sale-p2">QUẢNG BÌNH – ĐỘNG PHONG NHA – ĐỘNG THIÊN ĐƯỜNG – SUỐI NƯỚC
-                    MỌOC
-                    – SÔNG CHÀY – HANG TỐI – CỒN CÁT QUANG PHÚ</p>
-                  <p class="tour-sale-p3">Khởi hành: Các ngày trong tuần <span
-                    class="tour-sale-span1">
-											2,390,000 đ</span><span class="tour-sale-span2">2,590,000 đ</span></p>
-                  <a href="chitiet.html" class="btn-detail-tour-sale btn">Xem chi tiết</a>
-                </div>
-              </div>
-
-              <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../assets/images/slider-3.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
-                <div class="wrapper-img-background">
-                  <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
-                  <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
-                  <p class="tour-sale-p2">QUẢNG BÌNH – ĐỘNG PHONG NHA – ĐỘNG THIÊN ĐƯỜNG – SUỐI NƯỚC
-                    MỌOC
-                    – SÔNG CHÀY – HANG TỐI – CỒN CÁT QUANG PHÚ</p>
-                  <p class="tour-sale-p3">Khởi hành: Các ngày trong tuần <span
-                    class="tour-sale-span1">
-											2,390,000 đ</span><span class="tour-sale-span2">2,590,000 đ</span></p>
-                  <a href="chitiet.html" class="btn-detail-tour-sale btn">Xem chi tiết</a>
-                </div>
-              </div>
-              <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../assets/images/slider-4.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
-                <div class="wrapper-img-background">
-                  <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
-                  <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
-                  <p class="tour-sale-p2">QUẢNG BÌNH – ĐỘNG PHONG NHA – ĐỘNG THIÊN ĐƯỜNG – SUỐI NƯỚC
-                    MỌOC
-                    – SÔNG CHÀY – HANG TỐI – CỒN CÁT QUANG PHÚ</p>
-                  <p class="tour-sale-p3">Khởi hành: Các ngày trong tuần <span
-                    class="tour-sale-span1">
-											2,390,000 đ</span><span class="tour-sale-span2">2,590,000 đ</span></p>
-                  <a href="chitiet.html" class="btn-detail-tour-sale btn">Xem chi tiết</a>
-                </div>
-              </div>
-              <div class="item wrapper-img-tourhot img-fluid rounded-20">
-                <img src="../assets/images/slider-5.jpg" alt="ảnh Sky" class="img-fluid rounded-20">
-                <div class="wrapper-img-background">
-                  <h3 class="text-center">TOUR QUẢNG BÌNH</h3>
-                  <p class="tour-sale-p1">3 NGÀY 2 ĐÊM</p>
-                  <p class="tour-sale-p2">QUẢNG BÌNH – ĐỘNG PHONG NHA – ĐỘNG THIÊN ĐƯỜNG – SUỐI NƯỚC
-                    MỌOC
-                    – SÔNG CHÀY – HANG TỐI – CỒN CÁT QUANG PHÚ</p>
-                  <p class="tour-sale-p3">Khởi hành: Các ngày trong tuần <span
-                    class="tour-sale-span1">
-											2,390,000 đ</span><span class="tour-sale-span2">2,590,000 đ</span></p>
+											{{ formatter.format(tourfirst.discount) }} đ</span><span class="tour-sale-span2">{{ formatter.format(tourfirst.price) }} đ</span></p>
                   <a href="chitiet.html" class="btn-detail-tour-sale btn">Xem chi tiết</a>
                 </div>
               </div>
             </div>
           </div>
           <div class="col-lg-7 pl-lg-5 ml-auto" style="margin-top: 135px;">
-            <div class="owl-carousel owl-carousel owl-3-slider second-carousel">
-              <div class="item item-tour-sale">
-                <a class="media-thumb" href="chitiet.html">
-                  <div class="media-text media-text-tour-sale">
-                    <h3>3,450,000 đ</h3>
-                    <span class="location">4,450,000 đ</span>
-                    <p style="margin-top: 16px;">ĐÀ NẴNG – NGŨ HÀNH SƠN – HỘI AN – BÀ NÀ HILLS - CÙ
-                      LAO
-                      CHÀM</p>
-                    <p>4 ngày 3 đêm</p>
-                    <p>Khởi hành: Các ngày trong tuần</p>
-                    <p class="text-center" style="color: #ada9a9; font-size: 20px !important;">
-                      (Click
-                      xem chi tiết)</p>
+            <div class="owl-carousel owl-carousel owl-3-slider second-carousel d-flex">
+                <div class="item item-tour-sale"  v-for="(item, index) in tours" :key="index" style="margin-right: 10px">
+                  <a class="media-thumb" href="chitiet.html">
+                    <div class="media-text media-text-tour-sale">
+                      <h3>{{formatter.format(item.discount)}} đ</h3>
+                      <span class="location">{{ formatter.format(item.price) }} đ</span>
+                      <p style="margin-top: 16px;">{{item.place}}</p>
+                      <p>{{item.quantityDate}}</p>
+                      <p>Khởi hành: {{item.dateStart}}</p>
+                      <p class="text-center" style="color: #ada9a9; font-size: 20px !important;">
+                        (Click
+                        xem chi tiết)</p>
+                    </div>
+                    <img :src="item.image" alt="Image" class="img-fluid" style="height: 310px; width: ">
+                  </a>
+                  <div class="tour-name-sale">
+                    <h5 class="text-center">Tour</h5>
+                    <p class="text-center">{{item.locationStart}} – {{item.locationEnd}}</p>
                   </div>
-                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-                </a>
-                <div class="tour-name-sale">
-                  <h5 class="text-center">Tour</h5>
-                  <p class="text-center">QUY NHƠN – PHÚ YÊN</p>
                 </div>
-              </div>
-              <div class="item item-tour-sale">
-                <a class="media-thumb" href="chitiet.html">
-                  <div class="media-text media-text-tour-sale">
-                    <h3>3,450,000 đ</h3>
-                    <span class="location">4,450,000 đ</span>
-                    <p style="margin-top: 16px;">ĐÀ NẴNG – NGŨ HÀNH SƠN – HỘI AN – BÀ NÀ HILLS - CÙ
-                      LAO
-                      CHÀM</p>
-                    <p>4 ngày 3 đêm</p>
-                    <p>Khởi hành: Các ngày trong tuần</p>
-                    <p class="text-center" style="color: #ada9a9; font-size: 20px !important;">
-                      (Click
-                      xem chi tiết)</p>
-                  </div>
-                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-                </a>
-                <div class="tour-name-sale">
-                  <h5 class="text-center">Tour</h5>
-                  <p class="text-center">QUY NHƠN – PHÚ YÊN</p>
-                </div>
-              </div>
-              <div class="item item-tour-sale">
-                <a class="media-thumb" href="chitiet.html">
-                  <div class="media-text media-text-tour-sale">
-                    <h3>3,450,000 đ</h3>
-                    <span class="location">4,450,000 đ</span>
-                    <p style="margin-top: 16px;">ĐÀ NẴNG – NGŨ HÀNH SƠN – HỘI AN – BÀ NÀ HILLS - CÙ
-                      LAO
-                      CHÀM</p>
-                    <p>4 ngày 3 đêm</p>
-                    <p>Khởi hành: Các ngày trong tuần</p>
-                    <p class="text-center" style="color: #ada9a9; font-size: 20px !important;">
-                      (Click
-                      xem chi tiết)</p>
-                  </div>
-                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-                </a>
-                <div class="tour-name-sale">
-                  <h5 class="text-center">Tour</h5>
-                  <p class="text-center">QUY NHƠN – PHÚ YÊN</p>
-                </div>
-              </div>
-              <div class="item item-tour-sale">
-                <a class="media-thumb" href="chitiet.html">
-                  <div class="media-text media-text-tour-sale">
-                    <h3>3,450,000 đ</h3>
-                    <span class="location">4,450,000 đ</span>
-                    <p style="margin-top: 16px;">ĐÀ NẴNG – NGŨ HÀNH SƠN – HỘI AN – BÀ NÀ HILLS - CÙ
-                      LAO
-                      CHÀM</p>
-                    <p>4 ngày 3 đêm</p>
-                    <p>Khởi hành: Các ngày trong tuần</p>
-                    <p class="text-center" style="color: #ada9a9; font-size: 20px !important;">
-                      (Click
-                      xem chi tiết)</p>
-                  </div>
-                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-                </a>
-                <div class="tour-name-sale">
-                  <h5 class="text-center">Tour</h5>
-                  <p class="text-center">QUY NHƠN – PHÚ YÊN</p>
-                </div>
-              </div>
-              <div class="item item-tour-sale">
-                <a class="media-thumb" href="chitiet.html">
-                  <div class="media-text media-text-tour-sale">
-                    <h3>3,450,000 đ</h3>
-                    <span class="location">4,450,000 đ</span>
-                    <p style="margin-top: 16px;">ĐÀ NẴNG – NGŨ HÀNH SƠN – HỘI AN – BÀ NÀ HILLS - CÙ
-                      LAO
-                      CHÀM</p>
-                    <p>4 ngày 3 đêm</p>
-                    <p>Khởi hành: Các ngày trong tuần</p>
-                    <p class="text-center" style="color: #ada9a9; font-size: 20px !important;">
-                      (Click
-                      xem chi tiết)</p>
-                  </div>
-                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-                </a>
-                <div class="tour-name-sale">
-                  <h5 class="text-center">Tour</h5>
-                  <p class="text-center">QUY NHƠN – PHÚ YÊN</p>
-                </div>
-              </div>
-              <div class="item item-tour-sale">
-                <a class="media-thumb" href="chitiet.html">
-                  <div class="media-text media-text-tour-sale">
-                    <h3>3,450,000 đ</h3>
-                    <span class="location">4,450,000 đ</span>
-                    <p style="margin-top: 16px;">ĐÀ NẴNG – NGŨ HÀNH SƠN – HỘI AN – BÀ NÀ HILLS - CÙ
-                      LAO
-                      CHÀM</p>
-                    <p>4 ngày 3 đêm</p>
-                    <p>Khởi hành: Các ngày trong tuần</p>
-                    <p class="text-center" style="color: #ada9a9; font-size: 20px !important;">
-                      (Click
-                      xem chi tiết)</p>
-                  </div>
-                  <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-                </a>
-                <div class="tour-name-sale">
-                  <h5 class="text-center">Tour</h5>
-                  <p class="text-center">QUY NHƠN – PHÚ YÊN cccccccccccccccccccccccccc</p>
-                </div>
-              </div>
 
             </div>
           </div>
@@ -720,6 +554,23 @@
 <script setup lang="ts">
 import HeaderComponent from '@/components/Header.vue'
 import FooterComponent from '@/components/Footer.vue'
+import { onMounted, ref  } from 'vue'
+import { getTour } from '@/services/homeService.js'
+
+const tours = ref({})
+const tourfirst = ref({})
+const formatter = new Intl.NumberFormat('en-US');
+
+onMounted(async () => {
+  tours.value = await getTour();
+
+  if (Object.keys(tours.value).length > 0) {
+    tourfirst.value = tours.value[Object.keys(tours.value)[0]];
+  } else {
+    console.log('No tours available');
+  }
+});
+
 </script>
 <style lang="css" scoped>
 .hero h1 {

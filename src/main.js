@@ -8,6 +8,8 @@ import './assets/js/jarallax.min.js';
 import './assets/js/owl.carousel.min.js';
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+// Import Bootstrap 3 JS
+import 'bootstrap/dist/js/bootstrap.min.js';
 
 import './assets/css/aos.css';
 import './assets/css/style.css';
@@ -18,7 +20,6 @@ import './assets/css/owl.carousel.min.css';
 import './assets/fonts/icomoon/style.css';
 import './assets/fonts/flaticon/font/flaticon.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
 import 'waypoints/lib/jquery.waypoints';
 
 import { createApp } from 'vue'
