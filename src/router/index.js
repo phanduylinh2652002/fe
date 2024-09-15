@@ -35,6 +35,11 @@ const router = createRouter({
         localStorage.removeItem('user');
         window.location.href = '/';
       }
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: () => import('../views/DetailView.vue')
     }
   ]
 })
