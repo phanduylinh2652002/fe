@@ -131,7 +131,7 @@
             <h2 class="section-title text-center mb-3 aos-init title-tour-summer-main"
                 style="font-size: 45px !important; font-weight: bold;" data-aos="fade-left"
                 data-aos-duration="1000">
-              Tours du lịch hè 2023</h2>
+              Tours du lịch hè 2024</h2>
             <p class="aos-init content-tour-summer-main" data-aos="fade-up" data-aos-duration="1000">Thật tuyệt vời khi giao quyền sắp xếp tour du
               lịch và
               kết hợp nghỉ ngơi trong thời gian gần 1
@@ -141,79 +141,20 @@
           </div>
         </div>
         <div class="row align-items-stretch aos-init list-tour-summer-main" data-aos="fade-right" data-aos-duration="1200">
-          <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1">
+          <div
+            class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1"
+            v-for="(item, key) in list" :key="key"
+          >
             <div class="item item-search">
               <div class="media-thumb">
                 <div class="media-text">
-                  <h3><i class="fa-solid fa-money-bill"></i> Vé giá 300k / 1 người</h3>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
-                    Quốc
-                    Tử Giám - Làng Nghề Gốm Bát Tràng</p>
+                  <h3><i class="fa-solid fa-money-bill"></i>
+                    <template v-if="item.discount">{{formatter.format(item.discount)}}</template>
+                    <template v-else>{{formatter.format(item.price)}}</template>
+                  </h3>
+                  <p class="location"><i class="fa-solid fa-location-dot"></i>{{ item.place }}</p>
                 </div>
-                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-              </div>
-            </div>
-
-            <div class="item item-search">
-              <div class="media-thumb">
-                <div class="media-text">
-                  <h3><i class="fa-solid fa-money-bill"></i> Vé giá 300k / 1 người</h3>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
-                    Quốc
-                    Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                </div>
-                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1">
-            <div class="item item-search">
-              <div class="media-thumb">
-                <div class="media-text">
-                  <h3><i class="fa-solid fa-money-bill"></i> Vé giá 300k / 1 người</h3>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
-                    Quốc
-                    Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                </div>
-                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-              </div>
-            </div>
-
-            <div class="item item-search">
-              <div class="media-thumb">
-                <div class="media-text">
-                  <h3><i class="fa-solid fa-money-bill"></i> Vé giá 300k / 1 người</h3>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
-                    Quốc
-                    Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                </div>
-                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
-              </div>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-lg-4 feature-1-wrap d-md-flex flex-md-column order-lg-1">
-            <div class="item item-search">
-              <div class="media-thumb">
-                <div class="media-text">
-                  <h3><i class="fa-solid fa-money-bill"></i> Vé giá 300k / 1 người</h3>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
-                    Quốc
-                    Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                </div>
-                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-tour-item">
-              </div>
-            </div>
-
-            <div class="item item-search">
-              <div class="media-thumb">
-                <div class="media-text">
-                  <h3><i class="fa-solid fa-money-bill"></i> Vé giá 300k / 1 người</h3>
-                  <p class="location"><i class="fa-solid fa-location-dot"></i> Thái Bình - Lăng Bác -
-                    Quốc
-                    Tử Giám - Làng Nghề Gốm Bát Tràng</p>
-                </div>
-                <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+                <img :src="item.image" alt="Image" class="img-fluid">
               </div>
             </div>
           </div>
@@ -224,36 +165,28 @@
     <div class="untree_co-section count-numbers py-5">
       <div class="container">
         <div class="row" style="text-align: center;">
-          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4">
             <div class="counter-wrap">
               <div class="counter">
-                <span class="" data-number="7313">0</span>
+                <span class="" data-number="{{quantity.tours}}">{{quantity.tours}}</span>
               </div>
               <span class="caption">Chuyến đi</span>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4">
             <div class="counter-wrap">
               <div class="counter">
-                <span class="" data-number="8492">0</span>
+                <span class="" data-number="{{quantity.customers}}">{{quantity.customers}}</span>
               </div>
               <span class="caption">Lượt khách</span>
             </div>
           </div>
-          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-4">
             <div class="counter-wrap">
               <div class="counter">
-                <span class="" data-number="100">0</span>
+                <span class="" data-number="{{quantity.tourGuide}}">{{quantity.tourGuide}}</span>
               </div>
               <span class="caption">Hướng dẫn viên chuyên nghiệp </span>
-            </div>
-          </div>
-          <div class="col-6 col-sm-6 col-md-6 col-lg-3">
-            <div class="counter-wrap">
-              <div class="counter">
-                <span class="" data-number="120">0</span>
-              </div>
-              <span class="caption">Tour có sẵn</span>
             </div>
           </div>
         </div>
@@ -274,67 +207,17 @@
 
         <div class="owl-carousel owl-3-slider">
 
-          <div class="item" data-aos="fade-up" data-aos-duration="1000">
+          <div class="item" data-aos="fade-up" data-aos-duration="1000"
+            v-for="(item, index) in domestic" :key="index"
+          >
             <a class="media-thumb" href="danhmuc.html">
               <div class="media-text">
-                <h3>Du lịch Phú Quốc</h3>
-                <span class="location">Phú Quốc</span>
+                <h3>Du lịch {{item.locationEnd}}</h3>
+                <span class="location me-5">{{item.locationEnd}}</span>
               </div>
-              <img src="../assets/images/hero-slider-1.jpg" alt="Image" class="img-fluid">
+              <img :src="item.image" alt="Image" class="img-fluid" style="height: 568px;">
             </a>
           </div>
-
-          <div class="item" data-aos="fade-up" data-aos-duration="1000">
-            <a class="media-thumb" href="danhmuc.html">
-              <div class="media-text">
-                <h3>Du lịch Hà Nội</h3>
-                <span class="location">Hà Nội</span>
-              </div>
-              <img src="../assets/images/hero-slider-2.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-
-          <div class="item" data-aos="fade-up" data-aos-duration="1000">
-            <a class="media-thumb" href="danhmuc.html">
-              <div class="media-text">
-                <h3>Du lich Hội An</h3>
-                <span class="location">Quảng Nam</span>
-              </div>
-              <img src="../assets/images/hero-slider-3.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-
-
-          <div class="item" data-aos="fade-up" data-aos-duration="1000">
-            <a class="media-thumb" href="danhmuc.html">
-              <div class="media-text">
-                <h3>Du lịch Nha Trang</h3>
-                <span class="location">Nha Trang</span>
-              </div>
-              <img src="../assets/images/hero-slider-4.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-
-          <div class="item" data-aos="fade-up" data-aos-duration="1000">
-            <a class="media-thumb" href="danhmuc.html">
-              <div class="media-text">
-                <h3>Du lịch Ninh Bình</h3>
-                <span class="location">Ninh Bình</span>
-              </div>
-              <img src="../assets/images/hero-slider-5.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-
-          <div class="item" data-aos="fade-up" data-aos-duration="1200">
-            <a class="media-thumb" href="danhmuc.html">
-              <div class="media-text">
-                <h3>Du lịch Đà Nẵng</h3>
-                <span class="location">Đà Nẵng</span>
-              </div>
-              <img src="../assets/images/hero-slider-2.jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-
         </div>
 
       </div>
@@ -555,14 +438,20 @@
 import HeaderComponent from '@/components/Header.vue'
 import FooterComponent from '@/components/Footer.vue'
 import { onMounted, ref  } from 'vue'
-import { getTour } from '@/services/homeService.js'
+import { getTour, listTours, info, tourDomestic } from '@/services/homeService.js'
 
 const tours = ref({})
 const tourfirst = ref({})
 const formatter = new Intl.NumberFormat('en-US');
+const list = ref({})
+const quantity = ref({})
+const domestic = ref({})
 
 onMounted(async () => {
   tours.value = await getTour();
+  list.value = await listTours();
+  quantity.value = await info();
+  domestic.value = await tourDomestic();
 
   if (Object.keys(tours.value).length > 0) {
     tourfirst.value = tours.value[Object.keys(tours.value)[0]];
