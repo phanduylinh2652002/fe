@@ -1,7 +1,16 @@
 import axios from '../uitls/customAxios.js'
 
-const detailTour = (id) => {
-  return axios.get(`/tour/${id}`)
+const detailTour = async (id) => {
+  let tour = {}
+
+  try {
+    const res = await axios.get(`/tour/${id}`);
+    tour = res;
+  } catch(err) {
+    console.log(err);
+  }
+
+  return tour
 }
 
 export {detailTour}

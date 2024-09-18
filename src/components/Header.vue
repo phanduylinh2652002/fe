@@ -2,10 +2,10 @@
   <nav class="site-nav">
     <div class="container">
       <div class="site-navigation d-flex justify-content-between">
-        <a href="index.html" class="logo m-0">SkyTour <span class="text-primary">.</span></a>
+        <a href="/" class="logo m-0">SkyTour <span class="text-primary">.</span></a>
 
         <ul class="js-clone-nav d-none d-lg-inline-block site-menu float-right">
-          <li class="active"><a href="index.html">Trang chủ</a></li>
+          <li class="active"><a href="/">Trang chủ</a></li>
           <li class="has-children">
             <a href="#">Địa điểm</a>
             <ul class="dropdown">
@@ -14,8 +14,14 @@
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Dịch vụ</a></li>
-          <li><a href="contact.html">Liên hệ</a></li>
+          <li><a href="services.html">Tin tức</a></li>
+          <li class="has-children">
+            <a href="#">Tour của tôi</a>
+            <ul class="dropdown">
+              <li><a href="">Chưa thanh toán</a></li>
+              <li><a href="">Đã thanh toán</a></li>
+            </ul>
+          </li>
           <li class="has-children" v-if="user">
             <a href="#">{{ user.name }}</a>
             <ul class="dropdown">

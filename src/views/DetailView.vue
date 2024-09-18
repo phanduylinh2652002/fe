@@ -2,28 +2,9 @@
   <Header/>
   <div class="untree_co-section">
     <div class="container my-5">
-      <!-- <div class="mb-5">
-        <div class="owl-single dots-absolute owl-carousel">
-          <img src="images/slider-1.jpg" alt="Free HTML Template by Untree.co" class="img-fluid img-tour-relate">
-          <img src="images/slider-2.jpg" alt="Free HTML Template by Untree.co" class="img-fluid">
-          <img src="images/slider-4.jpg" alt="Free HTML Template by Untree.co" class="img-fluid">
-        </div>
-      </div> -->
-
       <div class="row justify-content-center">
         <div class="col-lg-8">
-          <div class="navation">
-            <p><a href="index.html">Trang chủ</a> <span><i class="fa-solid fa-angles-right"></i></span> <a
-              href="danhmuc.html">Du lịch hè</a> <span><i class="fa-solid fa-angles-right"></i></span> <span> Tour
-                Quy Nhơn – Phú Yên 4 Ngày 3 Đêm</span></p>
-          </div>
           <p class="title-tou__p">{{ tour?.name }}</p>
-          <span>4.8 <i class="fa-solid fa-star" style="color: rgb(231, 231, 6);"></i> <span>Đánh giá</span></span>
-          <div class="owl-single dots-absolute owl-carousel">
-            <img src="../assets/images/slider-1.jpg" alt="Free HTML Template by Untree.co" class="img-fluid">
-            <img src="../assets/images/slider-2.jpg" alt="Free HTML Template by Untree.co" class="img-fluid">
-            <img src="../assets/images/slider-4.jpg" alt="Free HTML Template by Untree.co" class="img-fluid">
-          </div>
           <div class="custom-block point-special-tour" data-aos="fade-up">
             <h2 class="section-title"><i class="fa-solid fa-book"></i> Điểm nhấn hành trình</h2>
             <div class="custom-accordion" id="accordion_1">
@@ -194,12 +175,12 @@
             </table>
             <div class="wrapper-booking-tour">
               <p>Giá từ:
-                <span v-if="tour?.discount > 0" style="font-size: 25px; font-weight: bold; color: #fff;">{{ tour?.discount }} đ</span>
-                <span style="text-decoration: line-through;"> {{ tour?.price }} đ</span>
+                <span v-if="tour?.discount > 0" style="font-size: 25px; font-weight: bold; color: #fff;">{{ formatter.format(tour?.discount) }} đ</span>
+                <span style="text-decoration: line-through;"> {{ formatter.format(tour?.price) }} đ</span>
               </p>
               <div class="btn-booking-tour">
                 <div class="btn-booking-tour__a">
-                  <a href="pay.html" class="btn btn-success">ĐẶT TOUR</a>
+                  <a href="#" class="btn btn-success">ĐẶT TOUR</a>
                 </div>
               </div>
             </div>
@@ -219,13 +200,15 @@ import Footer from '@/components/Footer.vue'
 
 const route = useRoute();
 const tour = ref(null)
+const formatter = new Intl.NumberFormat('en-US')
+
 const getDetail = async () =>{
     const res = await detailTour(route.params.id);
     if (res.success === true) {
       tour.value = res.data
     }
 }
-console.log(tour)
+
 onMounted(()=>{
   getDetail()
 })

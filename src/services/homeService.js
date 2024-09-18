@@ -52,4 +52,17 @@ const tourDomestic = async () => {
   return tours
 }
 
-export { getTour, listTours, info, tourDomestic }
+const tourEu = async () => {
+  let tours = {}
+
+  try {
+    const res = await axios.get('/tourEu');
+    tours = res;
+  } catch(err) {
+    console.log(err);
+  }
+
+  return tours
+}
+
+export { getTour, listTours, info, tourDomestic, tourEu }
