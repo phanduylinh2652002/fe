@@ -127,10 +127,15 @@
                 :key="index"
                 style="margin-right: 10px"
               >
-                <a class="media-thumb" href="chitiet.html">
+                <router-link class="media-thumb" :to="{ name: 'detail', params: { id: `${item.id}` } }">
                   <div class="media-text media-text-tour-sale">
-                    <h3>{{ formatter.format(item.discount) }} đ</h3>
-                    <span class="location">{{ formatter.format(item.price) }} đ</span>
+                    <div v-if="item.discount > 0">
+                      <h3>{{ formatter.format(item.discount) }} đ</h3>
+                      <span class="location">{{ formatter.format(item.price) }} đ</span>
+                    </div>
+                    <div v-else>
+                      <h3>{{ formatter.format(item.price) }} đ</h3>
+                    </div>
                     <p style="margin-top: 16px">{{ item.place }}</p>
                     <p>{{ item.quantityDate }}</p>
                     <p>Khởi hành: {{ item.dateStart }}</p>
@@ -144,7 +149,7 @@
                     class="img-fluid"
                     style="height: 310px; width:"
                   />
-                </a>
+                </router-link>
                 <div class="tour-name-sale">
                   <h5 class="text-center">Tour</h5>
                   <p class="text-center">{{ item.locationStart }} – {{ item.locationEnd }}</p>
@@ -188,7 +193,9 @@
             v-for="(item, key) in list"
             :key="key"
           >
-            <div class="item item-search">
+            <router-link class="item item-search"
+                         :to="{ name: 'detail', params: { id: `${item.id}` } }"
+            >
               <div class="media-thumb">
                 <div class="media-text">
                   <h3>
@@ -200,7 +207,7 @@
                 </div>
                 <img :src="item.image" alt="Image" class="img-fluid" />
               </div>
-            </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -261,13 +268,13 @@
             v-for="(item, index) in domestic"
             :key="index"
           >
-            <a class="media-thumb" href="danhmuc.html">
+            <router-link class="media-thumb" :to="{ name: 'detail', params: { id: `${item.id}` } }">
               <div class="media-text">
                 <h3>Du lịch {{ item.locationEnd }}</h3>
                 <span class="location me-5">{{ item.locationEnd }}</span>
               </div>
               <img :src="item.image" alt="Image" class="img-fluid" style="height: 568px" />
-            </a>
+            </router-link>
           </div>
         </div>
       </div>
