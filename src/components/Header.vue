@@ -14,7 +14,7 @@
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Tin tức</a></li>
+          <li><a href="/news">Tin tức</a></li>
           <li class="has-children">
             <a href="#">Tour của tôi</a>
             <ul class="dropdown">
