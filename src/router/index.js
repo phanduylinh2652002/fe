@@ -40,6 +40,22 @@ const router = createRouter({
       path: '/detail/:id',
       name: 'detail',
       component: () => import('../views/DetailView.vue')
+    },
+    {
+      path: '/category/:id',
+      name: 'category',
+      component: () => import('../views/ListByCategory.vue')
+    },
+    {
+      path: '/formCustomer/:id',
+      name: 'formCustomer',
+      component: () => import('../views/FormCustomer.vue')
+    }
+    ,
+    {
+      path: '/bookTour/:id',
+      name: 'bookTour',
+      component: () => import('../views/BookTour.vue')
     }
   ]
 })

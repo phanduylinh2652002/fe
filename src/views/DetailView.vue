@@ -57,7 +57,7 @@
               </p>
               <div class="btn-booking-tour">
                 <div class="btn-booking-tour__a">
-                  <a href="#" class="btn btn-success">ĐẶT TOUR</a>
+                  <router-link :to="{name: 'formCustomer', params: {id: `${tour?.id}`}}" class="btn btn-success">ĐẶT TOUR</router-link>
                 </div>
               </div>
             </div>
