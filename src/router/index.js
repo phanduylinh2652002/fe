@@ -35,6 +35,11 @@ const router = createRouter({
         localStorage.removeItem('user');
         window.location.href = '/';
       }
+    },
+    {
+      path: '/news',
+      name: 'news',
+      component: () => import('../views/news/NewIndex.vue')
     }
   ]
 })

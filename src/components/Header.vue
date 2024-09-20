@@ -16,6 +16,7 @@
           </li>
           <li><a href="services.html">Dịch vụ</a></li>
           <li><a href="contact.html">Liên hệ</a></li>
+          <li><a href="/news">Tin tức</a></li>
           <li class="has-children" v-if="user">
             <a href="#">{{ user.name }}</a>
             <ul class="dropdown">
