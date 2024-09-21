@@ -75,7 +75,6 @@
         </div>
       </div>
       <!-- thanh toán -->
-      <form class="contact-form" data-aos="fade-up" data-aos-delay="200" action="{{route('orderTour', $tours->tour_id)}}" method="post">
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <p class="title-tou__p">THÔNG TIN LIÊN HỆ</p>
@@ -83,13 +82,15 @@
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <label class="text-black" for="fullname">Họ và tên</label>
-                  <input type="text" class="form-control" id="fullname" name="customer_name">
+                  <Field type="text" class="form-control" id="fullname" name="name" rules="required"/>
+                  <span class="text-danger">{{ errors.fullname }}</span>
                 </div>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <label class="text-black" for="phone">Điện Thoại</label>
-                  <input type="tel" class="form-control" id="phone" name="customer_phone">
+                  <Field type="tel" class="form-control" id="phone" name="phone" rules="required"/>
+                  <span class="text-danger">{{ errors.phone }}</span>
                 </div>
               </div>
             </div>
@@ -97,13 +98,13 @@
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <label class="text-black" for="numberAdult">Người lớn</label>
-                  <input type="number" class="form-control" id="numberAdult" name="quantity_OldPerson">
+                  <Field type="number" class="form-control" id="numberAdult" name="quantity_OldPerson"/>
                 </div>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <label class="text-black" for="numberChildrenBig">Trẻ em(5 - 11 tuổi):</label>
-                  <input type="number" class="form-control" id="numberChildrenBig" min="0" max="30" name="quantity_YoungPerson">
+                  <Field type="number" class="form-control" id="numberChildrenBig" min="0" max="30" name="quantity_YoungPerson" />
                 </div>
               </div>
             </div>
@@ -111,13 +112,13 @@
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <label class="text-black" for="numberChildrenNormal">Trẻ nhỏ( 2 - 5 tuổi):</label>
-                  <input type="number" class="form-control" id="numberChildrenNormal" min="0" max="30" name="quantity_Children">
+                  <Field type="number" class="form-control" id="numberChildrenNormal" min="0" max="30" name="quantity_Children"  />
                 </div>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <label class="text-black" for="numberChildrenSmall">Trẻ Sơ sinh(nhỏ hơn 2 tuổi):</label>
-                  <input type="number" class="form-control" id="numberChildrenSmall" min="0" max="30" name="quantity_Infant">
+                  <Field type="number" class="form-control" id="numberChildrenSmall" min="0" max="30" name="quantity_Infant"/>
                 </div>
               </div>
             </div>
@@ -126,27 +127,27 @@
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <label class="text-black" for="email">Email</label>
-                  <input type="email" class="form-control" id="email" name="customer_email">
+                  <Field type="email" class="form-control" id="email" name="email" rules="required"/>
+                  <span class="text-danger">{{ errors.email }}</span>
                 </div>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <input type="date" class="form-control" id="dateStart"  name="date">
+                  <Field type="date" class="form-control" id="dateStart"  name="date" rules="required"/>
+                  <span class="text-danger">{{ errors.date }}</span>
                 </div>
               </div>
             </div>
             <div class="form-group mt-3">
               <label class="text-black" for="note">Nội dung ghi chú</label>
-              <textarea name="note" class="form-control" id="note" cols="10" rows="2"></textarea>
+              <Field name="note" as="textarea" class="form-control" id="note" cols="10" rows="2" rules="required"/>
+              <span class="text-danger">{{ errors.note }}</span>
             </div>
-            @if(auth()->check())
-            <button type="submit" class="btn btn-primary">Đặt tour</button>
-            @else
-            <a href="{{url('login')}}" type="submit" class="btn btn-primary">Đăng nhập để đặt tour</a>
-            @endif
+
+            <button v-if="token" type="button" class="btn btn-primary" @click="BookTour">Đặt tour</button>
+            <router-link v-else to="/login" class="btn btn-primary">Đăng nhập để đặt tour</router-link>
           </div>
         </div>
-      </form>
       <!-- /thanh toán -->
     </div>
   </div>
@@ -157,13 +158,24 @@ import Header from '@/components/Header.vue'
 import Footer from '@/components/Footer.vue'
 import { detailTour } from '@/services/tourService.js'
 import { onMounted, ref } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+import { Field, useForm } from 'vee-validate'
 
 const route = useRoute()
+const router = useRouter()
 const tour = ref({})
+const token = ref(null)
 const formatter = new Intl.NumberFormat('en-US')
+const { handleSubmit, errors } = useForm({});
 
 onMounted(async () => {
   tour.value = (await detailTour(route.params.id)).data
+  token.value=localStorage.getItem('token')
 })
+
+const BookTour = handleSubmit(async (data) => {
+  localStorage.setItem('tour', JSON.stringify(data))
+  await router.push({ name: 'bookTour', params: { id: tour.value.id } })
+})
+
 </script>

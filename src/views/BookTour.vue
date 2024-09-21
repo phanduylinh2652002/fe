@@ -13,30 +13,39 @@
           <tbody>
           <tr>
             <td>
-              <p> - Giá người lớn x <span></span></p>
+              <p> - Giá người lớn x <span>{{ customer.quantity_YoungPerson }}</span></p>
             </td>
             <td>
-              <p></p>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p> - Giá trẻ em x <span>
-                    </span></p>
-            </td>
-            <td>
-              <p></p>
+             <span v-if="tour.discount > 0">
+                    {{ formatter.format(tour?.discount * customer.quantity_YoungPerson) }} đ
+                  </span>
+              <span v-else>
+                    {{ formatter.format(tour?.price * customer.quantity_YoungPerson) }} đ
+                  </span>
             </td>
           </tr>
           <tr>
             <td>
-              <p> - Giá trẻ nhỏ x <span>0</span></p>
+              <p> - Giá trẻ em x <span>{{ customer.quantity_OldPerson }}</span></p>
+            </td>
+            <td>
+              <span v-if="tour.discount > 0">
+                    {{ formatter.format(tour?.discount/2 * customer.quantity_OldPerson) }} đ
+                  </span>
+              <span v-else>
+                    {{ formatter.format(tour?.price/2 * customer.quantity_OldPerson) }} đ
+                  </span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p> - Giá trẻ nhỏ x <span>{{ customer.quantity_Children }}</span></p>
             </td>
             <td>0</td>
           </tr>
           <tr>
             <td>
-              <p> - Giá trẻ sơ sinh x <span>0</span></p>
+              <p> - Giá trẻ sơ sinh x <span>{{ customer.quantity_Infant }}</span></p>
             </td>
             <td>0</td>
           </tr>
@@ -53,20 +62,40 @@
 
         </table>
         <div class="d-flex justify-content-between">
-          <a href="" type="submit" class="btn btn-primary">Quay lại</a>
+          <router-link :to="{ name: 'formCustomer', params: { id: tour.id } }" class="btn btn-primary">Quay lại</router-link>
           <div class="d-flex">
-            <form action="" method="post">
-              <button type="submit" class="btn btn-primary">Thanh toán tại quầy</button>
-            </form>
-            <form action="" method="post">
-              <button type="submit" class="btn btn-primary" name="redirect">Thanh toán VnPay</button>
-            </form>
+              <button type="submit" class="btn btn-primary" @click="handlePayment">Thanh toán tại quầy</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { onMounted, ref } from 'vue'
+import { bookTour, detailTour } from '@/services/tourService.js'
+import { useRoute, useRouter } from 'vue-router'
+
+const tour = ref({})
+const customer = ref({})
+const route = useRoute()
+const router = useRouter()
+const formatter = new Intl.NumberFormat('en-US')
+
+onMounted(async () => {
+  tour.value = (await detailTour(route.params.id)).data
+  customer.value = JSON.parse(localStorage.getItem('tour'))
+})
+
+const handlePayment = async () =>{
+  const res = await bookTour(customer.value)
+
+  if (res.success === true) {
+    await router.push({ name: 'home' })
+  }
+}
+</script>
 
 <script>
 var myHeader = document.querySelector(".site-nav");
