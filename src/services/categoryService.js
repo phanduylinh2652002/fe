@@ -13,4 +13,17 @@ const getCategories = async () => {
   return categoriesData;
 };
 
-export { getCategories }
+const detailCategory = async (id) => {
+  let category = {}
+
+  try {
+    const res = await axios.get(`/category/${id}`);
+    category = res;
+  } catch(err) {
+    console.log(err);
+  }
+
+  return category
+}
+
+export { getCategories, detailCategory }

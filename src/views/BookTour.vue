@@ -14,50 +14,49 @@
           <tbody>
           <tr>
             <td>
-              <p>{{tour.name}} - Giá người lớn x <span>{{ customer.quantity_YoungPerson }}</span></p>
+              <p>{{tour.name}} - Giá người lớn x <span>{{ customer.quantity_OldPerson }}</span></p>
             </td>
             <td>
              <span v-if="tour.discount > 0">
-                    {{ formatter.format(tour?.discount * customer.quantity_YoungPerson) }} đ
+                    {{ formatter.format(tour?.discount * customer.quantity_OldPerson) }} đ
                   </span>
               <span v-else>
-                    {{ formatter.format(tour?.price * customer.quantity_YoungPerson) }} đ
+                    {{ formatter.format(tour?.price * customer.quantity_OldPerson) }} đ
                   </span>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{{tour.name}} - Giá trẻ em x <span>{{ customer.quantity_OldPerson }}</span></p>
+              <p>{{tour.name}} - Giá trẻ em x <span>{{ customer.quantity_YoungPerson ?? 0 }}</span></p>
             </td>
             <td>
               <span v-if="tour.discount > 0">
-                    {{ formatter.format(tour?.discount/2 * customer.quantity_OldPerson) }} đ
+                    {{ formatter.format(tour?.discount/2 * (customer.quantity_YoungPerson ?? 0)) }} đ
                   </span>
               <span v-else>
-                    {{ formatter.format(tour?.price/2 * customer.quantity_OldPerson) }} đ
+                    {{ formatter.format(tour?.price/2 * (customer.quantity_YoungPerson ?? 0)) }} đ
                   </span>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{{tour.name}} - Giá trẻ nhỏ x <span>{{ customer.quantity_Children }}</span></p>
+              <p>{{tour.name}} - Giá trẻ nhỏ x <span>{{ customer.quantity_Children ?? 0 }}</span></p>
             </td>
             <td>0</td>
           </tr>
           <tr>
             <td>
-              <p>{{tour.name}} - Giá trẻ sơ sinh x <span>{{ customer.quantity_Infant }}</span></p>
+              <p>{{tour.name}} - Giá trẻ sơ sinh x <span>{{ customer.quantity_Infant ?? 0 }}</span></p>
             </td>
             <td>0</td>
           </tr>
           <tr>
             <td>Tạm tính</td>
-            <td>
-              </td>
+            <td>{{formatter.format(total)}} đ</td>
           </tr>
           <tr>
             <td style="font-weight: bold;">Tổng</td>
-            <td style="font-weight: bold; font-size: 17px;"></td>
+            <td style="font-weight: bold; font-size: 17px;">{{formatter.format(total)}}</td>
           </tr>
           </tbody>
 
@@ -84,22 +83,26 @@ const customer = ref({})
 const route = useRoute()
 const router = useRouter()
 const formatter = new Intl.NumberFormat('en-US')
+const total = ref()
 
 onMounted(async () => {
   tour.value = (await detailTour(route.params.id)).data
   customer.value = JSON.parse(localStorage.getItem('tour'))
+  if (tour.value.discount > 0) {
+    total.value = tour.value?.discount * customer.value.quantity_OldPerson + tour.value?.discount/2 * (customer.value.quantity_YoungPerson ?? 0)
+  }
+  else {
+    total.value = tour.value?.price * customer.value.quantity_OldPerson + tour.value?.price/2 * (customer.value.quantity_YoungPerson ?? 0)
+  }
 })
 
 const handlePayment = async () =>{
-  const res = await bookTour(customer.value)
+  const user = JSON.parse(localStorage.getItem('user'))
+  const data = { customer: customer.value, tour: tour.value, total: total.value,user: user}
+  const res = await bookTour(data)
 
   if (res.success === true) {
     await router.push({ name: 'home' })
   }
 }
-</script>
-
-<script>
-var myHeader = document.querySelector(".site-nav");
-myHeader.classList.add("site-nav__color");
 </script>

@@ -10,7 +10,7 @@
             <a href="#">Địa điểm</a>
             <ul class="dropdown">
               <li v-for="(item, index) in categories.data" :key="index">
-                <a href="#">{{ item.name }}</a>
+                <router-link :to="{name: 'category', params: {id: item.id}}">{{ item.name }}</router-link>
               </li>
             </ul>
           </li>

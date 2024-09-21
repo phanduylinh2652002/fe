@@ -302,14 +302,14 @@
             :key="index"
           >
             <div class="media-1">
-              <a href="#" class="d-block mb-3">
+              <router-link :to="{name: 'detail', params: {id: item.id}}" class="d-block mb-3">
                 <img
                   :src="item.image"
                   alt="Image"
                   class="img-fluid"
                   style="height: 205px; width: 100%"
                 />
-              </a>
+              </router-link>
               <span class="d-flex align-items-center loc mb-2">
                 <span class="icon-room mr-3"></span>
                 <span style="margin-left: 15px">{{ item.locationEnd }}</span>
