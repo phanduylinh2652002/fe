@@ -81,15 +81,18 @@
             <div class="row">
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <label class="text-black" for="fullname">Họ và tên</label>
-                  <Field type="text" class="form-control" id="fullname" name="name" rules="required"/>
-                  <span class="text-danger">{{ errors.fullname }}</span>
+                  <Field type="text" class="form-control" id="fullname" name="name"
+                         rules="required"
+                         placeholder="Họ tên"
+                  />
                 </div>
+                  <span class="text-danger">{{ errors.fullname }}</span>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <label class="text-black" for="phone">Điện Thoại</label>
-                  <Field type="tel" class="form-control" id="phone" name="phone" rules="required"/>
+                  <Field type="tel" class="form-control" id="phone" name="phone" rules="required"
+                         placeholder="Điện thoại"
+                  />
                   <span class="text-danger">{{ errors.phone }}</span>
                 </div>
               </div>
@@ -97,28 +100,34 @@
             <div class="row">
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <label class="text-black" for="numberAdult">Người lớn</label>
-                  <Field type="number" class="form-control" id="numberAdult" name="quantity_OldPerson"/>
+                  <Field type="number" class="form-control" id="numberAdult" name="quantity_OldPerson"
+                         placeholder="Người lớn"
+                  />
                 </div>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <label class="text-black" for="numberChildrenBig">Trẻ em(5 - 11 tuổi):</label>
-                  <Field type="number" class="form-control" id="numberChildrenBig" min="0" max="30" name="quantity_YoungPerson" />
+                  <Field type="number" class="form-control" id="numberChildrenBig"
+                         min="0" max="30" name="quantity_YoungPerson"
+                         placeholder="Trẻ em(5 - 11 tuổi)"
+                  />
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <label class="text-black" for="numberChildrenNormal">Trẻ nhỏ( 2 - 5 tuổi):</label>
-                  <Field type="number" class="form-control" id="numberChildrenNormal" min="0" max="30" name="quantity_Children"  />
+                  <label class="text-black" for="numberChildrenNormal"></label>
+                  <Field type="number" class="form-control" id="numberChildrenNormal" min="0" max="30" name="quantity_Children"
+                         placeholder="Trẻ nhỏ( 2 - 5 tuổi):"
+                  />
                 </div>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <label class="text-black" for="numberChildrenSmall">Trẻ Sơ sinh(nhỏ hơn 2 tuổi):</label>
-                  <Field type="number" class="form-control" id="numberChildrenSmall" min="0" max="30" name="quantity_Infant"/>
+                  <Field type="number" class="form-control" id="numberChildrenSmall" min="0" max="30" name="quantity_Infant"
+                    placeholder="Trẻ Sơ sinh(nhỏ hơn 2 tuổi)"
+                  />
                 </div>
               </div>
             </div>
@@ -126,21 +135,23 @@
             <div class="row">
               <div class="col-6 mt-3">
                 <div class="form-group">
-                  <label class="text-black" for="email">Email</label>
-                  <Field type="email" class="form-control" id="email" name="email" rules="required"/>
-                  <span class="text-danger">{{ errors.email }}</span>
+                  <Field type="email" class="form-control" id="email" name="email" rules="required"
+                         placeholder="Email"
+                  />
                 </div>
+                  <span class="text-danger">{{ errors.email }}</span>
               </div>
               <div class="col-6 mt-3">
                 <div class="form-group">
                   <Field type="date" class="form-control" id="dateStart"  name="date" rules="required"/>
-                  <span class="text-danger">{{ errors.date }}</span>
                 </div>
+                  <span class="text-danger">{{ errors.date }}</span>
               </div>
             </div>
             <div class="form-group mt-3">
-              <label class="text-black" for="note">Nội dung ghi chú</label>
-              <Field name="note" as="textarea" class="form-control" id="note" cols="10" rows="2" rules="required"/>
+              <Field name="note" as="textarea" class="form-control" id="note" cols="10" rows="2"
+                placeholder="Ghi Chú"
+              />
               <span class="text-danger">{{ errors.note }}</span>
             </div>
 

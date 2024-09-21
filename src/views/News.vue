@@ -16,7 +16,9 @@
               </div>
               <div class="col-lg-8">
                 <p class="title-tour-list font-weight-bold font-size-p" style="margin-top: 10px;">
-                  <a :href="`chitiet.html?id=${news.id}`" class="title-tour-list__line">{{ news.name }}</a>
+                  <router-link :to="{ name: 'news.show', params: { id: news.id } }" class="title-tour-list__line">
+                    {{ news.name }}
+                  </router-link>
                 </p>
                 <p>Ngày đăng: <span>{{news.date}}</span></p>
               </div>

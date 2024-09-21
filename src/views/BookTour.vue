@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <div class="untree_co-section">
     <div class="container my-5 d-flex justify-content-center">
       <div class="col-lg-6">
@@ -13,7 +14,7 @@
           <tbody>
           <tr>
             <td>
-              <p> - Giá người lớn x <span>{{ customer.quantity_YoungPerson }}</span></p>
+              <p>{{tour.name}} - Giá người lớn x <span>{{ customer.quantity_YoungPerson }}</span></p>
             </td>
             <td>
              <span v-if="tour.discount > 0">
@@ -26,7 +27,7 @@
           </tr>
           <tr>
             <td>
-              <p> - Giá trẻ em x <span>{{ customer.quantity_OldPerson }}</span></p>
+              <p>{{tour.name}} - Giá trẻ em x <span>{{ customer.quantity_OldPerson }}</span></p>
             </td>
             <td>
               <span v-if="tour.discount > 0">
@@ -39,13 +40,13 @@
           </tr>
           <tr>
             <td>
-              <p> - Giá trẻ nhỏ x <span>{{ customer.quantity_Children }}</span></p>
+              <p>{{tour.name}} - Giá trẻ nhỏ x <span>{{ customer.quantity_Children }}</span></p>
             </td>
             <td>0</td>
           </tr>
           <tr>
             <td>
-              <p> - Giá trẻ sơ sinh x <span>{{ customer.quantity_Infant }}</span></p>
+              <p>{{tour.name}} - Giá trẻ sơ sinh x <span>{{ customer.quantity_Infant }}</span></p>
             </td>
             <td>0</td>
           </tr>
@@ -76,6 +77,7 @@
 import { onMounted, ref } from 'vue'
 import { bookTour, detailTour } from '@/services/tourService.js'
 import { useRoute, useRouter } from 'vue-router'
+import Header from '@/components/Header.vue'
 
 const tour = ref({})
 const customer = ref({})
