@@ -4,4 +4,8 @@ const detailTour = (id) => {
   return axios.get(`/tour/${id}`)
 }
 
-export {detailTour}
+const bookTour = (data) => {
+  return axios.post('/bookTour', data)
+}
+
+export {detailTour, bookTour}
