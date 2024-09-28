@@ -37,10 +37,10 @@ import FooterComponent from '@/components/Footer.vue'
 import { onMounted, ref } from 'vue';
 import { getBillPaid } from '@/services/paymentService';
 
-const listBill = ref([]); // Khởi tạo biến danh sách hóa đơn
+const listBill = ref([]);
 
 onMounted(async () => {
-  listBill.value = await getBillPaid(); // Gọi hàm getBill và gán dữ liệu trả về cho listBill
+  listBill.value = await getBillPaid();
 });
 
 console.log(listBill);

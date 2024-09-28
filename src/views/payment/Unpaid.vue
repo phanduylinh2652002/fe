@@ -37,10 +37,10 @@
   import { onMounted, ref } from 'vue';
   import { getBillUnpaid } from '@/services/paymentService';
 
-  const listBill = ref([]); // Khởi tạo biến danh sách hóa đơn
+  const listBill = ref([]);
 
   onMounted(async () => {
-    listBill.value = await getBillUnpaid(); // Gọi hàm getBill và gán dữ liệu trả về cho listBill
+    listBill.value = await getBillUnpaid();
   });
 
   </script>
