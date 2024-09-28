@@ -67,6 +67,18 @@ const router = createRouter({
       name: 'news.show',
       component: () => import('../views/NewsDetail.vue'),
     },
+
+    {
+      path: '/paid',
+      name: 'paid',
+      component: () => import('../views/payment/Paid.vue')
+    },
+
+    {
+      path: '/unpaid',
+      name: 'unpaid',
+      component: () => import('../views/payment/Unpaid.vue')
+    },
   ]
 })
 

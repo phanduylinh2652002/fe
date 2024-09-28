@@ -18,8 +18,8 @@
           <li class="has-children">
             <a href="#">Tour của tôi</a>
             <ul class="dropdown">
-              <li><a href="">Chưa thanh toán</a></li>
-              <li><a href="">Đã thanh toán</a></li>
+              <li><a href="/unpaid">Chưa thanh toán</a></li>
+              <li><a href="/paid">Đã thanh toán</a></li>
             </ul>
           </li>
           <li class="has-children" v-if="user">
