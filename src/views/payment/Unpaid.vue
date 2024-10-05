@@ -32,7 +32,7 @@
                 </p>
                 <p>Hành trình: <span> {{bills.order.tour.place}}</span></p>
                 <p>Phương tiện: <span>{{bills.order.tour.vehicle}}</span></p>
-                <p>Khởi hành: <span>{{bills.order.tour.dateStart}}</span></p>
+                <p>Ngày đặt: <span>{{bills.date}}</span></p>
                 <div class="time-tour-list">
                   <button
                      class="time-tour-list-left"
@@ -40,7 +40,7 @@
                      color: white;
                      border: none;"
                      v-if="bills.order.status === 0"
-                     @click="handleCancel"
+                     @click="handleCancel(bills.id)"
                   >
                     <span>Hủy tour</span>
                   </button>
@@ -54,14 +54,7 @@
                     <span>Đã hủy</span>
                   </button>
                   <div class="time-tour-list-right">
-                    <p v-if="bills.order.tour.discount > 0">
-                      <span>
-                        {{formatter.format(bills.order.tour.discount)}} đ
-                      </span>
-                      <span style="font-size: 15px; font-weight: lighter; text-decoration: line-through;">
-                                            {{formatter.format(bills.order.tour.price)}} đ</span>
-                    </p>
-                    <p v-else>{{formatter.format(bills.order.tour.price)}} đ
+                    <p>{{formatter.format(bills.total)}} đ
                     </p>
                   </div>
                 </div>
@@ -79,18 +72,28 @@
 import HeaderComponent from '@/components/Header.vue'
 import FooterComponent from '@/components/Footer.vue'
 import { onMounted, ref } from 'vue';
-import { getBillUnpaid } from '@/services/paymentService';
+import { getBillUnpaid, cancelTour } from '@/services/paymentService';
+import { useRouter } from 'vue-router'
 
 const listBill = ref({});
 const formatter = new Intl.NumberFormat('en-US')
+const router = useRouter()
 
 
 onMounted(async () => {
   listBill.value = await getBillUnpaid();
 });
 
-const handleCancel = () =>{
-  console.log(1)
+const handleCancel = async (id) =>{
+  const cancel = confirm('are you sure? ')
+  if (cancel) {
+    const data = {id: id}
+    const res = await cancelTour(data);
+
+    if (res.success === true) {
+      window.location.reload()
+    }
+  }
 }
 </script>
 

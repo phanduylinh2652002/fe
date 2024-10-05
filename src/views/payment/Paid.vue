@@ -32,20 +32,13 @@
                 </p>
                 <p>Hành trình: <span> {{bills.order.tour.place}}</span></p>
                 <p>Phương tiện: <span>{{bills.order.tour.vehicle}}</span></p>
-                <p>Khởi hành: <span>{{bills.order.tour.dateStart}}</span></p>
+                <p>Ngày đặt: <span>{{bills.date}}</span></p>
                 <div class="time-tour-list">
                   <div class="time-tour-list-left" style="background-color: #198754; color: white">
                     <span>Đã thanh toán</span>
                   </div>
                   <div class="time-tour-list-right">
-                    <p v-if="bills.order.tour.discount > 0">
-                      <span>
-                        {{formatter.format(bills.order.tour.discount)}} đ
-                      </span>
-                      <span style="font-size: 15px; font-weight: lighter; text-decoration: line-through;">
-                                            {{formatter.format(bills.order.tour.price)}} đ</span>
-                    </p>
-                    <p v-else>{{formatter.format(bills.order.tour.price)}} đ
+                    <p>{{formatter.format(bills.total)}} đ
                     </p>
                   </div>
                 </div>

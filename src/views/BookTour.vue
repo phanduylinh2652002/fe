@@ -102,7 +102,7 @@ const handlePayment = async () =>{
   const res = await bookTour(data)
 
   if (res.success === true) {
-    await router.push({ name: 'home' })
+    await router.push({ name: 'success' })
   }
 }
 </script>

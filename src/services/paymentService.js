@@ -18,4 +18,8 @@ const getBillPaid = async () => {
     }
 };
 
-export { getBillUnpaid, getBillPaid }
+const cancelTour = async (id) => {
+    return axios.post('/cancel', id)
+}
+
+export { getBillUnpaid, getBillPaid, cancelTour }

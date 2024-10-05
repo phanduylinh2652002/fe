@@ -73,11 +73,15 @@ const router = createRouter({
       name: 'paid',
       component: () => import('../views/payment/Paid.vue')
     },
-
     {
       path: '/unpaid',
       name: 'unpaid',
       component: () => import('../views/payment/Unpaid.vue')
+    },
+    {
+      path: '/success',
+      name: 'success',
+      component: () => import('../views/payment/Success.vue')
     },
   ]
 })
