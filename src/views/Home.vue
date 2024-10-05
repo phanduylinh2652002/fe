@@ -22,18 +22,8 @@
 
               <div class="row">
                 <div class="col-12">
-                  <form class="form">
+                  <form class="form" @submit.prevent="handleSearch">
                     <div class="row mb-2">
-                      <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                        <!-- <input type="text" class="form-control" name="daterange"> -->
-                        <select name="" id="province" class="form-control custom-select">
-                          <option value="">Điểm xuất phát</option>
-                          <option value="All">Tất cả</option>
-                          <option value="HaNoi">Hà Nội</option>
-                          <option value="DaNang">Đà Nẵng</option>
-                          <option value="HoChiMinh">Hồ Chí Minh</option>
-                        </select>
-                      </div>
                       <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-6">
                         <!-- <input type="text" class="form-control" name="daterange"> -->
                         <input
@@ -42,6 +32,7 @@
                           class="form-control"
                           placeholder="Tìm tour du lịch..."
                           style="padding-left: 10px"
+                          v-model="searchKey"
                         />
                       </div>
                       <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-2 wrapper-filter">
@@ -57,11 +48,9 @@
                     </div>
                     <div class="row align-items-center">
                       <div class="col-sm-12 col-md-6 mb-3 mb-lg-0 col-lg-4">
-                        <input
-                          type="submit"
-                          class="btn btn-primary btn-block"
-                          value="Tìm kiếm tour"
-                        />
+                        <button type="submit" class="btn btn-primary btn-block">
+                          Tìm kiếm tour
+                        </button>
                       </div>
                     </div>
                   </form>
@@ -127,7 +116,10 @@
                 :key="index"
                 style="margin-right: 10px"
               >
-                <router-link class="media-thumb" :to="{ name: 'detail', params: { id: `${item.id}` } }">
+                <router-link
+                  class="media-thumb"
+                  :to="{ name: 'detail', params: { id: `${item.id}` } }"
+                >
                   <div class="media-text media-text-tour-sale">
                     <div v-if="item.discount > 0">
                       <h3>{{ formatter.format(item.discount) }} đ</h3>
@@ -193,8 +185,9 @@
             v-for="(item, key) in list"
             :key="key"
           >
-            <router-link class="item item-search"
-                         :to="{ name: 'detail', params: { id: `${item.id}` } }"
+            <router-link
+              class="item item-search"
+              :to="{ name: 'detail', params: { id: `${item.id}` } }"
             >
               <div class="media-thumb">
                 <div class="media-text">
@@ -302,7 +295,7 @@
             :key="index"
           >
             <div class="media-1">
-              <router-link :to="{name: 'detail', params: {id: item.id}}" class="d-block mb-3">
+              <router-link :to="{ name: 'detail', params: { id: item.id } }" class="d-block mb-3">
                 <img
                   :src="item.image"
                   alt="Image"
@@ -448,6 +441,7 @@ import HeaderComponent from '@/components/Header.vue'
 import FooterComponent from '@/components/Footer.vue'
 import { onMounted, ref } from 'vue'
 import { getTour, listTours, info, tourDomestic, tourEu } from '@/services/homeService.js'
+import { useRouter } from 'vue-router'
 
 const tours = ref({})
 const tourfirst = ref({})
@@ -456,6 +450,8 @@ const list = ref({})
 const quantity = ref({})
 const domestic = ref({})
 const eu = ref({})
+const searchKey = ref('')
+const router = useRouter()
 
 onMounted(async () => {
   tours.value = await getTour()
@@ -470,6 +466,10 @@ onMounted(async () => {
     console.log('No tours available')
   }
 })
+
+const handleSearch = () => {
+  router.push({name: 'search', query: { searchKey: searchKey.value }})
+}
 </script>
 <style lang="css" scoped>
 .hero h1 {

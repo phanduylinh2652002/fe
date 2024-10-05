@@ -83,6 +83,11 @@ const router = createRouter({
       name: 'success',
       component: () => import('../views/payment/Success.vue')
     },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import('../views/Search.vue')
+    },
   ]
 })
 
