@@ -22,4 +22,8 @@ const cancelTour = async (id) => {
     return axios.post('/cancel', id)
 }
 
-export { getBillUnpaid, getBillPaid, cancelTour }
+const detailOrder = async (id) => {
+    return axios.get(`/detailOrder/${id}`)
+}
+
+export { getBillUnpaid, getBillPaid, cancelTour, detailOrder }

@@ -52,7 +52,7 @@ const { handleSubmit, errors } = useForm({});
 const router = useRouter()
 
 const register = handleSubmit(async (data) => {
-     data.role_id = 1
+     data.role_id = 3
      const res = await registerApi(data)
       if (res.success === true) {
         localStorage.setItem('token', res.token);

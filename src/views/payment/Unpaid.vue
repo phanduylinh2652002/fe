@@ -24,7 +24,7 @@
               <div class="col-lg-8">
                 <p class="title-tour-list font-weight-bold font-size-p" style="margin-top: 10px">
                   <router-link
-                    :to="{ name: 'detail', params: { id: bills.order.tour.id } }"
+                    :to="{ name: 'detailOrder', params: { id: bills.id } }"
                     class="title-tour-list__line"
                   >
                     {{ bills.order.tour.name }}

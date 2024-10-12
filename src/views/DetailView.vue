@@ -48,12 +48,19 @@
                 <th>Xuất phát:</th>
                 <td>{{ tour?.locationStart }}</td>
               </tr>
+              <tr>
+                <th>Hướng dẫn viên:</th>
+                <td>{{ tour?.guide.name }}</td>
+              </tr>
               </tbody>
             </table>
             <div class="wrapper-booking-tour">
-              <p>Giá từ:
-                <span v-if="tour?.discount > 0" style="font-size: 25px; font-weight: bold; color: #fff;">{{ formatter.format(tour?.discount) }} đ</span>
+              <p  v-if="tour?.discount > 0" >Giá từ:
+                <span style="font-size: 25px; font-weight: bold; color: #fff;">{{ formatter.format(tour?.discount) }} đ</span>
                 <span style="text-decoration: line-through;"> {{ formatter.format(tour?.price) }} đ</span>
+              </p>
+              <p v-else>
+                <span style="font-size: 25px; font-weight: bold; color: #fff;">{{ formatter.format(tour?.price) }} đ</span>
               </p>
               <div class="btn-booking-tour">
                 <div class="btn-booking-tour__a">
